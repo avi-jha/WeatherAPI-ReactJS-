@@ -1,68 +1,48 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import { callWeatherAPI } from "./Functions/exportFunc";
+import DataView from "./components/DataView";
 
 function App() {
-  const [cityName, setCityName] = useState("");
-  const [responseData, setResponseData] = useState();
+  const data = [
+    { name: "Anom", age: 19, gender: "Male" },
+    { name: "Megha", age: 19, gender: "Female" },
+    { name: "Subham", age: 25, gender: "Male" },
+  ];
 
+  const [cityName, setCityName] = useState("");
+  const [responseData, setResponseData] = useState({});
+
+  // * sets city name
   const handleCityChange = (event) => {
     setCityName(event.target.value);
   };
 
-  const onSubmit = () => {
-    var data = callWeatherAPI(cityName);
+  // * WeatherAPI call
+  const handleClick = async () => {
+    var data = await callWeatherAPI(cityName);
     console.log("reposneData -----> ", data);
-    if (data != "error") {
-      console.log("No Data Found!!");
-    } else {
-      setResponseData(data);
-    }
+
+    setResponseData(data);
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React2
-        </a> */}
+      <div className="App-body">
         <p className="city-label">Enter name of City</p>
         <input
           className="input-field"
           type="text"
           value={cityName}
           onChange={handleCityChange}
+          placeholder="Enter City Name"
         />
-        <button onSubmit={onSubmit}> Submit </button>
+        <br />
+        <button onClick={handleClick}>Click me</button>
+        <br />
 
-        <table>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-        </table>
-      </header>
+        <DataView name={"Location"} data={responseData.location} />
+      </div>
     </div>
   );
 }

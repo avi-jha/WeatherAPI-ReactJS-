@@ -1,0 +1,17 @@
+.data-view {
+  width: 90%;
+  justify-content: center;
+  border-width: 2px;
+  border-color: aqua;
+}
+
+.data-table {
+  width: 100%;
+  display: flex;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
