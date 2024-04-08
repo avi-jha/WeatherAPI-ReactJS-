@@ -3,7 +3,7 @@ export const callWeatherAPI = async (city) => {
 
   var formData = new URLSearchParams();
 
-  formData.append("key", "afa773c74540472f82e131602241303");
+  formData.append("key", "e1ddbbd83c6a4e90a62101457240404");
   formData.append("q", city);
 
   try {

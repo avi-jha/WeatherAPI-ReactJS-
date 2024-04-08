@@ -4,12 +4,6 @@ import { callWeatherAPI } from "./Functions/exportFunc";
 import DataView from "./components/DataView";
 
 function App() {
-  const data = [
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-  ];
-
   const [cityName, setCityName] = useState("");
   const [responseData, setResponseData] = useState({});
 
