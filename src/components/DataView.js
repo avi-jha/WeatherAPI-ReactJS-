@@ -10,7 +10,7 @@ export default function DataView(props) {
 
       {data &&
         Object.entries(data).map(([key, value]) =>
-          value != null ? (
+          value != null && key !== "condition" ? (
             <div key={key} className="data-table">
               <div className="table-row">
                 <p>

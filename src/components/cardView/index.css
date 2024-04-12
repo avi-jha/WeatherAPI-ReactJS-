@@ -1,0 +1,7 @@
+.card-outer {
+  border: 1px solid #4a5456;
+  display: flex;
+  height: 90%;
+  width: 30%;
+  background-color: #4a5456;
+}

@@ -1,41 +1,29 @@
 import "./App.css";
-import { useState } from "react";
-import { callWeatherAPI } from "./Functions/exportFunc";
+import { useEffect, useState } from "react";
 import DataView from "./components/DataView";
+import NavigationBar from "./components/navbar";
+import CardView from "./components/cardView";
 
 function App() {
-  const [cityName, setCityName] = useState("");
   const [responseData, setResponseData] = useState({});
 
-  // * sets city name
-  const handleCityChange = (event) => {
-    setCityName(event.target.value);
-  };
-
-  // * WeatherAPI call
-  const handleClick = async () => {
-    var data = await callWeatherAPI(cityName);
-    console.log("reposneData -----> ", data);
-
-    setResponseData(data);
-  };
+  useEffect(() => {
+    console.log(responseData);
+  }, [responseData]);
 
   return (
     <div className="App">
       <div className="App-body">
-        <p className="city-label">Enter name of City</p>
-        <input
-          className="input-field"
-          type="text"
-          value={cityName}
-          onChange={handleCityChange}
-          placeholder="Enter City Name"
-        />
-        <br />
-        <button onClick={handleClick}>Click me</button>
-        <br />
+        <NavigationBar weatherData={setResponseData} />
+        <div className="main-view">
+          <div className="card-outer">
+            <CardView />
+          </div>
+        </div>
 
-        <DataView name={"Location"} data={responseData.location} />
+        {/* //* deisplay weather data */}
+        {/* <DataView name={"Location"} data={responseData.location} />
+        <DataView name={"Current"} data={responseData.current} /> */}
       </div>
     </div>
   );

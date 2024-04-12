@@ -8,10 +8,11 @@
 .data-table {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .table-row {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  width: 100vh;
 }

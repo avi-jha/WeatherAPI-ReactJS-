@@ -1,0 +1,57 @@
+.row-view {
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  flex-direction: row;
+  background: transparent;
+  display: flex;
+}
+
+.fixed-top-right {
+  position: fixed;
+  top: 40px; /* Adjust top distance from the top of the screen */
+  right: 40px; /* Adjust right distance from the right side of the screen */
+  transform: translate(
+    0,
+    0
+  ); /* Fix subpixel rendering issues in some browsers */
+}
+
+.capsule-input {
+  background: transparent;
+  border: 1.5px solid #4a5456;
+  border-radius: 20px;
+  padding: 10px 15px;
+  outline: none; /* Remove default focus outline */
+  transition: border-color 1s ease; /* Smooth transition for border color */
+  height: 40px;
+  width: 20dvh;
+  margin-right: 15px;
+  color: #f8fafa;
+  font-size: 14px;
+}
+
+/* Optional: Add styles for when input is focused */
+.capsule-input:focus {
+  border-color: #cfd3d4; /* Changes border color on focus */
+}
+
+.capsule-input::placeholder {
+  font-size: 14px;
+}
+
+.btn-style {
+  height: 35px;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #4a5456;
+  border-radius: 17px;
+  /* background-color: #374143; */
+}
+
+.search-image {
+  height: 25px;
+  width: 25px;
+}
