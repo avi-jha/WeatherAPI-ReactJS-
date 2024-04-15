@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import { callWeatherAPI } from "../../Functions/exportFunc";
+import { weatherForecastAPI } from "../../Functions/exportFunc";
 import { searchImage } from "../../assets/images/index";
 
 export default function NavigationBar(props) {
-  const { weatherData } = props;
+  const { weatherData, city } = props;
 
   const [cityName, setCityName] = useState("");
 
@@ -16,7 +16,7 @@ export default function NavigationBar(props) {
 
   // * handle api call
   const handleClick = async () => {
-    var data = await callWeatherAPI(cityName);
+    var data = await weatherForecastAPI(cityName);
     weatherData(data);
   };
 
