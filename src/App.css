@@ -66,6 +66,18 @@
   font-style: italic;
 }
 
+.short-text {
+  font-size: small;
+}
+
+.medium-text {
+  font-size: medium;
+}
+
+.large-text {
+  font-size: larger;
+}
+
 /* .card-outer {
   border: 1px solid #586062;
   border-radius: 20px;

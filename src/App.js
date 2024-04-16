@@ -20,7 +20,7 @@ function App() {
         <div className="App-body">
           <NavigationBar weatherData={setResponseData} />
           <div className="main-view">
-            <CardView />
+            <CardView responseData={responseData} />
             <div className="data-view">
               <DetailsView responseData={responseData} />
               <BottomView />

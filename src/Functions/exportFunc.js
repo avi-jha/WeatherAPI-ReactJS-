@@ -58,6 +58,7 @@ export const weatherForecastAPI = async (city) => {
   }
 };
 
+// common functions
 export const upperCaseString = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -115,4 +116,33 @@ export const formatDate = (dateString) => {
   const formattedDate = `${dayName}, ${monthName} ${dayOfMonth}`;
 
   return formattedDate;
+};
+
+export const calculateAQI = (aqiData) => {
+  // Check if the provided AQI data is valid
+  if (!aqiData) {
+    console.error("Invalid AQI data");
+    return null;
+  }
+
+  // Extract pollutant concentrations from AQI data
+  const { co, no2, o3, so2, pm2_5, pm10 } = aqiData;
+
+  // Check if required pollutants are available
+  if (co === undefined || no2 === undefined || so2 === undefined) {
+    console.error("Missing required pollutant data");
+    return null;
+  }
+
+  // Calculate AQI based on the formula provided by EPA or DEFRA
+  const aqiIndex =
+    co / 100 +
+    no2 / 10 +
+    (o3 || 1 / 100) +
+    so2 / 100 +
+    (pm2_5 || 0) +
+    (pm10 || 0);
+
+  console.log("AQI Index:", aqiIndex);
+  return aqiIndex;
 };
