@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import { locationIcon } from "../../assets/images";
 import { formatDate } from "../../Functions/exportFunc";
+import CapsuleView from "../capsuleView";
 
 function DetailsView(props) {
   const { responseData } = props;
@@ -19,7 +20,7 @@ function DetailsView(props) {
 
   var weathertext = responseData.current?.condition.text || "";
 
-  var weatherIcon = responseData.current?.condition.icon || "";
+  // var weatherIcon = responseData.current?.condition.icon || "";
 
   return (
     <div className="details-view">
@@ -30,7 +31,10 @@ function DetailsView(props) {
               <img src={locationIcon} alt="!!" className="image-view" />
               {cityName} ({formatDate(timeData)})
             </p>
-            <p className="temp-text">{currentTemp}°</p>
+            <span className="temp-view">
+              <p className="temp-text">{currentTemp}°</p>
+              <CapsuleView responseData={responseData} />
+            </span>
           </p>
         </div>
         <div className="data-tabs margin-tabs">

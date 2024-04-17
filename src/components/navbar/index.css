@@ -29,6 +29,8 @@
   margin-right: 15px;
   color: #f8fafa;
   font-size: 14px;
+  align-items: center;
+  display: flex;
 }
 
 /* Optional: Add styles for when input is focused */

@@ -144,5 +144,28 @@ export const calculateAQI = (aqiData) => {
     (pm10 || 0);
 
   console.log("AQI Index:", aqiIndex);
-  return aqiIndex;
+  return aqiIndex.toFixed(1);
+};
+
+export const uvText = (value) => {
+  let uvText = "";
+
+  if (!value) {
+    console.error("Invalid uv data");
+    return null;
+  }
+
+  if (value < 2) {
+    uvText = "Very Low";
+  } else if (value < 5) {
+    uvText = "Moderate";
+  } else if (value < 7) {
+    uvText = "High";
+  } else if (value < 10) {
+    uvText = "Very High";
+  } else if (value > 10) {
+    uvText = "Extremely High";
+  }
+
+  return uvText;
 };

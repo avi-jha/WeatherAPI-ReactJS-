@@ -41,3 +41,13 @@
 .section h2 {
   margin-bottom: 5px;
 }
+
+.percent-text {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.row-container {
+  display: flex;
+  align-items: center;
+}

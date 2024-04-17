@@ -1,0 +1,16 @@
+.capsule-container {
+  background: transparent;
+  border: 1px solid #5c696c;
+  border-radius: 20px;
+  width: 10dvh;
+  color: #f8fafa;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  margin: 10px;
+}
